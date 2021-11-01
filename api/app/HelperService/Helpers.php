@@ -83,10 +83,10 @@ class Helpers
                 foreach($config['sections'] as $s_idx=>$section){
                     if(is_array($section)) {
                         foreach($section as $i_idx=>$item){
-                            if(!is_string($item['name'])) return "Missing 'Name' in Section" . ($s_idx + 1) . "- Item " . ($i_idx + 1);
-                            if(!is_string($item['url'])) return "Missing 'URL' in Section" . ($s_idx + 1) . "- Item " . ($i_idx + 1);
-                            if(!is_string($item['image'])) return "Missing 'Image' in Section" . ($s_idx + 1) . "- Item " . ($i_idx + 1);
-                            if(!is_string($item['color'])) return "Missing 'Color' in Section" . ($s_idx + 1) . "- Item " . ($i_idx + 1);
+                            if(!isset($item['name'])  || !is_string($item['name'])  ) return "Missing 'Name' in Section" . ($s_idx + 1) . "- Item " . ($i_idx + 1);
+                            if(!isset($item['url'])   || !is_string($item['url'])   ) return "Missing 'URL' in Section" . ($s_idx + 1) . "- Item " . ($i_idx + 1);
+                            if(!isset($item['image']) || !is_string($item['image']) ) return "Missing 'Image' in Section" . ($s_idx + 1) . "- Item " . ($i_idx + 1);
+                            if(!isset($item['color']) || !is_string($item['color']) ) return "Missing 'Color' in Section" . ($s_idx + 1) . "- Item " . ($i_idx + 1);
                         }
                     }
                 }
