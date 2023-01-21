@@ -92,7 +92,7 @@ class Helpers
                 }
             }
             return true;
-        } catch(Exception $e) { return "Internal Error while validating Config " . $e; }
+        } catch(Exception $e) { return "Internal Error while validating Config"; }
     }
 
     public function imgPath($string){
