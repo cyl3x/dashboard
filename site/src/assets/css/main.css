@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .text-shadow-md {
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    .text-shadow-none {
+        text-shadow: none;
+    }
+}
+
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-active {
+    transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.insta-leave-active {
+    transition: height 0.0s ease;
+    opacity: 0;
+}
+
+.insta-enter-active {
+    transition: height 0.0s ease;
+    transition-delay: 0.15s;
+    opacity: 0;
+}
+
+.insta-enter-from,
+.insta-leave-to {
+    height: 0;
+}
+
+.disable-select {
+    -drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}

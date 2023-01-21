@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  dashboard:
+    container_name: dashboard
+    build: .
+    ports:
+      - 5600:80
+    volumes:
+      - dashboard-volume:/app/var
+    environment:
+      MAX_ALLOWED_REGISTERED_USERS: 1
+      APP_PROTOCOL: 'http'
+
+volumes:
+  dashboard-volume:
