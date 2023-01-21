@@ -21,7 +21,7 @@ import ColorPicker from '../../components/ColorPicker.vue';
             <h2 :class="sectionIdx > 0 ? 'pt-3' : ''" class="flex justify-between w-full pb-1 text-2xl h-15">
                 Section {{ sectionIdx + 1 }}
                 <div class="flex flex-row-reverse gap-4 text-neutral-500">
-                    <unicon class="w-6 h-6 transition duration-100 cursor-pointer hover:text-neutral-300" name="plus" @mouseup="values.sections[sectionIdx].push(newItem)"/>
+                    <unicon class="w-6 h-6 transition duration-100 cursor-pointer hover:text-neutral-300" name="plus" @mouseup="values.sections[sectionIdx].push(JSON.parse(JSON.stringify(newItem)))"/>
                     <div class="flex flex-row-reverse justify-center gap-2 align-middle">
                         <unicon v-if="sectionIdx != sections.length - 1" class="w-6 h-6 duration-100 cursor-pointer hover:transition hover:text-neutral-300" @mouseup="swapSection(sectionIdx, sectionIdx+1)" name="arrow-down" />
                         <unicon v-if="sectionIdx != 0" class="flex w-6 h-6 transition duration-100 cursor-pointer hover:text-neutral-300" @mouseup="swapSection(sectionIdx, sectionIdx-1)" name="arrow-up" />
@@ -59,7 +59,7 @@ import ColorPicker from '../../components/ColorPicker.vue';
             Section {{ sections.length + 1 }}
         </h2>
 
-        <div @click="pushSection([newItem])" class="flex justify-center w-full h-auto py-5 overflow-hidden transition duration-150 border-4 border-dashed rounded-md shadow-lg cursor-pointer text-neutral-500 border-neutral-500 hover:border-neutral-400 bg-neutral-700 hover:text-neutral-400">
+        <div @click="pushSection([JSON.parse(JSON.stringify(newItem))])" class="flex justify-center w-full h-auto py-5 overflow-hidden transition duration-150 border-4 border-dashed rounded-md shadow-lg cursor-pointer text-neutral-500 border-neutral-500 hover:border-neutral-400 bg-neutral-700 hover:text-neutral-400">
             <unicon name="plus" class="m-auto w-7 h-7"/>
         </div>
     </div>
