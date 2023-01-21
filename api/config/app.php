@@ -2,6 +2,8 @@
 
 return [
 
+    'secure' => env('APP_SECURE', env('APP_PROTOCOL', env('APP_HTTP', false))),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
